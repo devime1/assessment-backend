@@ -13,9 +13,9 @@ WORKDIR /var/www
 
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
-
-RUN touch database/database.sqlite
+RUN composer install --no-dev --optimize-autoloader \
+    && touch database/database.sqlite \
+    && php artisan migrate --force
 
 EXPOSE 10000
 
