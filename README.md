@@ -110,8 +110,8 @@ DELETE `/api/hazards/{hazard}`
 ## 1. Clone the Repository
 
 ```
-git clone <repository-url>
-cd backend
+git clone https://github.com/devime1/asessment-backend.git
+cd assessment-backend
 ```
 
 ---
