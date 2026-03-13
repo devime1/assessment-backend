@@ -14,11 +14,11 @@ WORKDIR /var/www
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
-RUN mkdir -p /var/www/database && touch /var/www/database/database.sqlite
+
+RUN touch database/database.sqlite
 
 EXPOSE 10000
-
 CMD php artisan config:clear && \
     php artisan cache:clear && \
-    php artisan migrate --force --seed && \
+    php artisan migrate --force && \
     php artisan serve --host=0.0.0.0 --port=10000
